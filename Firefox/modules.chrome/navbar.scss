@@ -1,0 +1,64 @@
+$height-nav-bar: 0px;
+$max-height-nav-bar: 9rem;
+
+/*
+ * Workaround  https://bugzilla.mozilla.org/show_bug.cgi?id=1600582
+ */
+@media(-moz-windows-default-theme) {
+
+  [sizemode="maximized"] #nav-bar {
+    margin-top: 8px;
+  }
+
+}
+
+/*
+ * Auto hide Navigation bar.
+ */
+#nav-bar {
+
+  background-color: transparent !important;
+  color: transparent !important;
+
+  position: absolute;
+  //display: hidden;
+
+  z-index: 2;
+
+  transition: margin-top 100ms linear !important;
+
+  // #. Not hide.
+  &:focus-within,
+  &[customizing],
+  &:hover {
+
+    background: inherit !important;
+    background-color: var(--lwt-accent-color) !important;
+    color: inherit !important;
+
+    margin-top: 0px !important;
+
+    //display: inline-block;
+
+  }
+
+  // #. To hide.
+  &:not([customizing]):not(:hover):not(:focus-within) {
+
+    margin-top: -2.8rem;
+
+  }
+
+  /*
+   * Blur navigation bar.
+   * */
+  &:hover ~ box > toolbox > .browser-toolbar:not([urlbar-exceeds-toolbar-bounds]),
+  &[customizing],
+  &:focus-within:not([urlbar-exceeds-toolbar-bounds]),
+  &:hover:not([urlbar-exceeds-toolbar-bounds]) {
+
+    backdrop-filter: blur(16px) saturate(200%);
+
+  }
+
+}

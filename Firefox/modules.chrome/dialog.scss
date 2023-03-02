@@ -1,0 +1,8 @@
+// #. Dialog.
+* {
+  --in-content-page-background: #17171A!important;
+} /* Disable when using light theme. Can't isolate */
+
+#window-modal-dialog {
+  --chrome-offset: 20px !important;
+}

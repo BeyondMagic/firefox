@@ -1,0 +1,89 @@
+:root {
+
+  --arrowpanel-border-radius: 6px !important;
+  --arrowpanel-menuitem-padding-block: 7.5px !important;
+  --arrowpanel-menuitem-margin: 0 5px !important;
+  --panel-subview-body-padding: 5px 0 !important;
+
+}
+
+:not(#ContentSelectDropdown) > menupopup > menuitem,
+:not(#ContentSelectDropdown) > menupopup > menu {
+
+  padding-block: 0.4em !important;
+}
+
+menuseparator {
+
+  border-top: 0.5em solid transparent !important;
+  margin: 0 !important;
+
+}
+
+// #. Remove Right Click Menu Top Settings.
+#context-sep-navigation,
+#appmenu-developer-tools {
+
+  display:none !important;
+
+}
+
+#context-navigation {
+
+  padding: 0 !important;
+
+}
+
+.addon-banner-item,
+.panel-banner-item {
+
+  margin: 0 5px 4px !important;
+
+}
+
+.toolbaritem-combined-buttons:not([widget-type="button-and-view"]),
+.toolbaritem-menu-buttons {
+
+  margin-inline-end: 4px !important;
+
+}
+
+#appMenu-fxa-status2:not([fxastatus]) {
+
+  padding-block: 4px !important;
+
+}
+
+menupopup[needsgutter] menu:not([icon],.menu-iconic),
+menupopup[needsgutter] menuitem:not([checked="true"],[icon], .menuitem-iconic) {
+
+  padding-inline-start: 1em !important;
+
+}
+
+#mainPopupSet {
+
+  backdrop-filter: blur(16px) saturate(200%);
+
+  &:hover ~ box > toolbox > .browser-toolbar {
+
+    background: inherit !important;
+    background-color: var(--lwt-accent-color) !important;
+    z-index: 2;
+
+  }
+
+}
+
+panel, menupopup {opacity: .98 !important}
+
+/*   Repaints the bookmark menu and context menus to the main menu color   */
+:not(#ContentSelectDropdown) > menupopup {
+  --menuitem-hover-background-color: var(--button-hover-bgcolor) !important;
+  --menu-background-color: var(--arrowpanel-background) !important;
+  --menu-color: var(--arrowpanel-color) !important;
+  --menu-disabled-color: var(--panel-disabled-color) !important;
+  --menu-border-color: var(--arrowpanel-border-color) !important;
+}
+
+

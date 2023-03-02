@@ -1,0 +1,10 @@
+// #. newtab
+@import 'modules.content/newtab';
+
+// #. home
+@import 'modules.content/home';
+
+* {
+  scrollbar-width: thin; 
+  scrollbar-color: #80808038 transparent !important;
+}

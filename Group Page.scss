@@ -1,0 +1,41 @@
+#root.root
+{
+  --nav-btn-width: 32px;
+  --nav-btn-height: 32px;
+
+  --tabs-pinned-width: 35px;
+  --tabs-pinned-height: 35px;
+  --tabs-height: 32px;
+
+  --selected-bg: var(--ff-tab-selected);
+  --selected-border: #287f94;
+
+  --bookmarks-folder-height: 32px;
+  --bookmarks-bookmark-height: 30px;
+}
+
+body
+{
+  [data-layout="list"] .bg
+  {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  [data-layout="grid"] .bg
+  {
+    opacity: .3;
+  }
+}
+
+@import 'modules.sidebery.group_page/theme';
+
+@import 'modules.sidebery.group_page/root';
+
+@import 'modules.sidebery.group_page/responsive';
+
+@import 'modules.sidebery.group_page/tab';
+
+@import 'modules.sidebery.group_page/title';
+
+@import 'modules.sidebery.group_page/groups';

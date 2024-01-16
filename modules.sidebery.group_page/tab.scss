@@ -1,0 +1,23 @@
+.new-tab,
+.tab
+{
+	background-color: #80808008;
+	box-shadow: none;
+  &:hover
+  {
+    background-color: #8080800e;
+    box-shadow: none;
+  }
+}
+
+.tab-title,
+.tab-url
+{
+  text-shadow: none;
+}
+
+/* Thin line beside the tabs to indicate sub-tree level */
+.Tab:not([data-lvl="0"]) .dnd-layer
+{
+  border-left: solid 1px var(--ff-tab-selected);
+}

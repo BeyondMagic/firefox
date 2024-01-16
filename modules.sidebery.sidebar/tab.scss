@@ -1,0 +1,60 @@
+.Tab
+{
+
+  &::before,
+  &[data-active]::before,
+  &::after,
+  &[data-active]::after
+  {
+    box-shadow:       none!important;
+    border:           none;
+    border:           none!important;
+    outline:          none!important;
+  }
+
+  &::before
+  {
+    background-color: transparent;
+    background-image: none;
+  }
+
+  &::after
+  {
+    display: none;
+  }
+
+  .title
+  {
+    font-size: 13px;
+  }
+
+  .close > *
+  {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+
+    margin-top: -0.1rem;
+    margin-left: -0.2rem;
+  }
+
+  .close > * > *
+  {
+    stroke: #FF6D75;
+    fill: #FF6D75;
+  }
+
+  .ctx
+  {
+    top: 0;
+    width: 2px;
+    height: 100%;
+    box-shadow: none;
+    opacity: .8;;
+  }
+}
+
+.Tab:hover[data-active]:not([data-selected]) .title,
+.PinnedTab:hover[data-active]:not([data-selected]) .title
+{
+  color: var(--tabs-activated-fg)
+}

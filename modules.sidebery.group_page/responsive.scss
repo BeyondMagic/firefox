@@ -1,0 +1,28 @@
+/* Visually flatten tree structure when sidebar is collapsed. */
+@media screen and (max-width: 40px)
+{
+  #root.root
+  {
+    --tabs-indent: 0px;
+    --bookmarks-indent: 0px;
+  }
+
+  .container
+  {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  /* Hide static buttons to prevent obstructing the panel icons */
+  .static-btns
+  {
+    visibility: collapse
+  }
+
+  /* Forces the active panel icon to be visible */
+  .main-items > .nav-item[data-active="true"]
+  {
+    opacity: 100 !important;
+    transform: initial !important;
+  }
+}

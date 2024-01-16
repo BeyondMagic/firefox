@@ -1,0 +1,108 @@
+$width-sidebery-collapsed-bar: 2.25rem;
+$max-width-sidebery-bar: 15rem;
+$sidebar-shadow-color: rgba(white, 0.5);
+
+// #. The title of the sidebar : [SideBery]
+#sidebar-header
+{
+  display: none;
+}
+
+// #. Sidebar position is on the right.
+#sidebar-box
+{
+  min-width: $width-sidebery-collapsed-bar!important;
+  max-width: $width-sidebery-collapsed-bar!important;
+
+  position: relative;
+  overflow: hidden;
+
+  *:fullscreen &
+  {
+    width: 0;
+    min-width: 0;
+    max-width: 0;
+  }
+
+  &[positionend]
+  {
+    direction: rtl;
+  }
+
+  &:not([hidden])
+  {
+    //border-right: solid 1px red !important;
+    //position: fixed;
+    z-index: 2;
+
+    height: 100%;
+    min-width: $width-sidebery-collapsed-bar !important;
+    max-width: $width-sidebery-collapsed-bar !important;
+    display: block;
+  }
+
+  &:not([hidden])[customizing],
+  &:not([hidden]):focus-visible,
+  &:not([hidden]):active,
+  &:not([hidden]):focus,
+  &:not([hidden]):focus-within,
+  &:not([hidden]):hover
+  {
+    overflow: visible;
+    //min-width: $max-width-sidebery-bar !important;
+    //max-width: $max-width-sidebery-bar !important;
+  }
+
+  #sidebar
+  {
+    position: absolute;
+    z-index: 1000;
+
+    min-width: $width-sidebery-collapsed-bar !important;
+    max-width: $width-sidebery-collapsed-bar !important;
+    width: $width-sidebery-collapsed-bar !important;
+    height: 100%;
+
+    background-color: inherit !important;
+
+    [sidebarcommand="viewBookmarksSidebar"] &,
+    &:hover
+    {
+      min-width: $max-width-sidebery-bar !important;
+      max-width: $max-width-sidebery-bar !important;
+      width: $max-width-sidebery-bar !important;
+
+      transform: translateX(0) !important;
+      transition: all 150ms linear;
+    }
+  }
+}
+
+#sidebar-search-container,
+.sidebar-panel .sidebar-placesTree,
+.sidebar-panel .sidebar-placesTreechildren
+{
+  background-color: inherit !important;
+
+  width: $max-width-sidebery-bar !important;
+  height: 100%;
+}
+
+#appcontent {margin-left: -6px}
+
+@media(-moz-windows-default-theme)
+{
+  [sizemode=normal] #sidebar-box
+  {
+    height: calc(100% - 10px);
+  }
+  #appcontent
+  {
+    margin-left: 0;
+  }
+}
+
+.sidebar-splitter
+{
+  --sidebar-border-color: var(--chrome-content-separator-color);
+}

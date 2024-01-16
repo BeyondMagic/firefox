@@ -1,0 +1,12 @@
+.Separator
+{
+  .body
+  {
+    &::after
+    {
+      background-color: #8883;
+      box-shadow: none;
+      top: auto;
+    }
+  }
+}

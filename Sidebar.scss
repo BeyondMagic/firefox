@@ -1,0 +1,34 @@
+* {
+	--nav-btn-width: 36px;
+	--nav-btn-height: 36px;
+	--nav-btn-opacity: .6;
+	--nav-btn-opacity-active: .75;
+	--nav-btn-activated-bg: transparent;
+
+	--tabs-height: 32px;
+
+	--border-fg: transparent;
+	--pinned-dock-overlay-bg: transparent;
+
+	--bookmarks-separator-height: 5px;
+}
+
+@import 'modules.sidebery.sidebar/theme';
+
+@import 'modules.sidebery.sidebar/all';
+
+@import 'modules.sidebery.sidebar/sidebar';
+
+@import 'modules.sidebery.sidebar/navigationbar';
+
+@import 'modules.sidebery.sidebar/ctxmenu';
+
+@import 'modules.sidebery.sidebar/folder';
+
+@import 'modules.sidebery.sidebar/pinneddock';
+
+@import 'modules.sidebery.sidebar/scrollbox';
+
+@import 'modules.sidebery.sidebar/separator';
+
+@import 'modules.sidebery.sidebar/tab';

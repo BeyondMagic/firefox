@@ -1,0 +1,12 @@
+.ScrollBox
+{
+  > .top-shadow
+  {
+    box-shadow: 0 1px 12px 0 var(--bg);
+  }
+
+  > .bottom-shadow
+  {
+    box-shadow: 0 -1px 12px 0 var(--bg);
+  }
+}

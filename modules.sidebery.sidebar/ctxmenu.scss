@@ -1,0 +1,12 @@
+.CtxMenu
+{
+  .inline-group:not(:last-of-type)
+  {
+    box-shadow: none;
+  }
+
+  .opt[data-separator]:before
+  {
+    background-color: transparent;
+  }
+}

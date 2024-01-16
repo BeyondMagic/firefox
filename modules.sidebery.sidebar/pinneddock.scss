@@ -1,0 +1,16 @@
+.PinnedDock
+{
+  #root[data-pinned-tabs-position="panel"][data-pinned-tabs-list] &
+  {
+    padding: 0 0 1px;
+  }
+
+  &::after
+  {
+    left: 8px;
+    width: calc(100% - 16px);
+    height: 1px;
+    background-color: #8885;
+    box-shadow: none;
+  }
+}

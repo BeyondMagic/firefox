@@ -1,0 +1,50 @@
+#bookmarksPanel,
+#bookmarks-view {
+
+  background-color: inherit !important;
+
+  width: 20rem !important;
+  height: 100%;
+
+}
+
+.bookmark-item .toolbarbutton-icon,
+.openintabs-menuitem,
+.bookmarks-actions-menuseparator,
+#PlacesToolbar menupopup menuseparator::before {
+
+  display:none;
+
+}
+
+toolbarbutton.bookmark-item {
+
+  margin: 0 !important;
+  padding-inline: 6px !important;
+  border-radius: 0 !important;
+
+}
+
+#personal-bookmarks #PlacesChevronPopup {
+
+  margin: -5px -1px !important;
+
+}
+
+toolbarbutton.bookmark-item menupopup:not(menupopup menupopup) {
+
+  margin: -5px -3px !important;
+
+}
+
+#PlacesToolbar menupopup menuseparator {
+
+  padding: 0 !important;
+
+}
+
+.menupopup-arrowscrollbox {
+
+  border: 1px solid var(--panel-border-color) !important;
+
+}

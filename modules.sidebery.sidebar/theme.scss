@@ -1,0 +1,34 @@
+/* For dark theme or without set preference.. */
+@media (prefers-color-scheme:dark), (prefers-color-scheme: no-preference)
+{
+	#root[data-style="auto"],
+  #root[data-style="dark"]
+  {
+    --bg: #000000;
+
+    --tabs-bg-hover: #000000;
+    --tabs-bg-active: rgba(255, 255, 255, 0.05);
+    --tabs-activated-fg: white;
+    --tabs-activated-bg: rgba(255, 255, 255, 0.05);
+
+    --nav-btn-bg: red;
+
+    --ctx-menu-bg:       #19191C;
+    --ctx-menu-bg-hover: #262629;
+    --ctx-menu-shadow: 0 0 0 1px #242427, 0 3px 5px 0 black;
+
+    --bookmarks-node-bg-hover:  #fcfcfd16;
+    --bookmarks-node-bg-active: #fcfcfd16;
+  }
+}
+
+/* For light theme. */
+@media (prefers-color-scheme:light)
+{
+	#root[data-style="auto"],
+  #root[data-style="light"]
+  {
+    --bg: #fcfcfd;
+    --ctx-menu-bg-hover: #ededee;
+  }
+}

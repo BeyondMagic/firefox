@@ -1,0 +1,130 @@
+:root {
+
+  --lwt-toolbar-field-focus: var(--toolbar-field-focus-background-color);
+
+}
+
+* {
+
+  --urlbar-height: var(--urlbar-toolbar-height) !important;
+
+  scrollbar-width: thin; 
+  scrollbar-color: #80808040 transparent !important;
+ 
+}
+
+
+#urlbar-background:not(#urlbar[breakout][breakout-extend][open] > #urlbar-background) {
+
+
+  background-color: transparent !important;
+  border: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+}
+
+#tracking-protection-icon-container:hover,
+#tracking-protection-icon-container[open],
+.identity-box-button:hover,
+.identity-box-button[open],
+#identity-icon-box[open],
+#identity-permission-box[open],
+#notification-popup-box:hover,
+#notification-popup-box[open],
+.urlbar-page-action:not([disabled]):hover,
+.urlbar-page-action:not([disabled])[open] {
+
+  background-color: var(--toolbarbutton-hover-background) !important;
+
+}
+
+#identity-icon-box {
+
+  max-width: calc(50px + 10em) !important
+
+}
+
+.identity-box-button:not(:hover) {
+
+  background-color: transparent !important;
+
+}
+
+.urlbarView-action {
+
+  margin-block: -4px !important;
+
+}
+
+.urlbarView-row:not([type="switchtab"]) .urlbarView-action,
+.urlbarView-title-separator,
+.search-one-offs > hbox {
+
+  display:none !important;
+
+}
+
+.urlbarView-url {
+
+  padding-left: 5px;
+
+}
+
+#urlbar[breakout][breakout-extend][open] > #urlbar-background,
+.urlbarView-row[type="switchtab"]:hover .urlbarView-action,
+.urlbarView-row[type="switchtab"][aria-selected="true"] .urlbarView-action {
+
+  background-color: color-mix(in srgb, var(--lwt-toolbar-field-focus) 85%, transparent) !important;
+  backdrop-filter: blur(32px) saturate(200%);
+
+}
+
+.urlbarView-row[label="Firefox Suggest"]::before {
+
+  display: none !important;
+
+}
+
+.urlbarView-row[label] {
+
+  margin-block-start: 0 !important;
+
+}
+
+
+
+
+.toolbarbutton-badge {
+
+  background-color: transparent !important;
+  box-shadow: none !important;
+  color: var(--toolbar-color) !important;
+  margin: -11px 0 0 !important;
+  margin-inline-end: -11px !important;
+}
+
+[uidensity=compact] .toolbarbutton-badge {
+
+  margin: -10px 0 0 !important;
+  margin-inline-end: -10px !important;
+
+}
+
+#statuspanel-label {
+
+  border: 0 !important;
+  border-top-right-radius: 3px;
+  backdrop-filter: blur(32px) saturate(200%);
+  background-color: #fff8 !important;
+  color: #000 !important;
+
+}
+
+[lwthemetextcolor="bright"] #statuspanel-label {
+
+  background-color: #0008 !important;
+  color: #eee !important;
+
+}

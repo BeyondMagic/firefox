@@ -1,0 +1,34 @@
+.Sidebar
+{
+	#nav_bar {
+		display: none;
+	}
+
+	.panel-btn
+	{
+		/* ??? Really nice naming standard. */
+		.panel-btn
+		{
+			background-color: #100f18;
+		}
+
+		.len
+		{
+			top: -1px;
+			padding: 0;
+			background: none;
+			font-weight: bolder;
+		}
+
+		&[data-active]
+		{
+			box-shadow: none;
+			background: rgba(225,255,255,0.3);
+
+			.len
+			{
+				color: white;
+			}
+		}
+	}
+}

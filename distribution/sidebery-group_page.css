@@ -1,0 +1,76 @@
+#root.root {
+  --nav-btn-width: 32px;
+  --nav-btn-height: 32px;
+  --tabs-pinned-width: 35px;
+  --tabs-pinned-height: 35px;
+  --tabs-height: 32px;
+  --selected-bg: var(--ff-tab-selected);
+  --selected-border: #287f94;
+  --bookmarks-folder-height: 32px;
+  --bookmarks-bookmark-height: 30px;
+}
+
+body [data-layout=list] .bg {
+  border-radius: 0;
+  box-shadow: none;
+}
+body [data-layout=grid] .bg {
+  opacity: 0.3;
+}
+
+@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
+  #root[data-style=auto], #root[data-style=dark] {
+    --bg: #080809!important;
+  }
+}
+/* Visually flatten tree structure when sidebar is collapsed. */
+@media screen and (max-width: 40px) {
+  #root.root {
+    --tabs-indent: 0px;
+    --bookmarks-indent: 0px;
+  }
+  .container {
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+  /* Hide static buttons to prevent obstructing the panel icons */
+  .static-btns {
+    visibility: collapse;
+  }
+  /* Forces the active panel icon to be visible */
+  .main-items > .nav-item[data-active=true] {
+    opacity: 100 !important;
+    transform: initial !important;
+  }
+}
+.new-tab,
+.tab {
+  background-color: rgba(128, 128, 128, 0.031372549);
+  box-shadow: none;
+}
+.new-tab:hover,
+.tab:hover {
+  background-color: rgba(128, 128, 128, 0.0549019608);
+  box-shadow: none;
+}
+
+.tab-title,
+.tab-url {
+  text-shadow: none;
+}
+
+/* Thin line beside the tabs to indicate sub-tree level */
+.Tab:not([data-lvl="0"]) .dnd-layer {
+  border-left: solid 1px var(--ff-tab-selected);
+}
+
+.title {
+  font-size: 2rem;
+  color: #888888;
+}
+
+.container,
+.bookmarks-tree {
+  padding-left: 4px;
+  padding-right: 4px;
+}

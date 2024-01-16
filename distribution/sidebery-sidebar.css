@@ -1,0 +1,144 @@
+* {
+  --nav-btn-width: 36px;
+  --nav-btn-height: 36px;
+  --nav-btn-opacity: .6;
+  --nav-btn-opacity-active: .75;
+  --nav-btn-activated-bg: transparent;
+  --tabs-height: 32px;
+  --border-fg: transparent;
+  --pinned-dock-overlay-bg: transparent;
+  --bookmarks-separator-height: 5px;
+}
+
+/* For dark theme or without set preference.. */
+@media (prefers-color-scheme: dark), (prefers-color-scheme: no-preference) {
+  #root[data-style=auto],
+  #root[data-style=dark] {
+    --bg: #000000;
+    --tabs-bg-hover: #000000;
+    --tabs-bg-active: rgba(255, 255, 255, 0.05);
+    --tabs-activated-fg: white;
+    --tabs-activated-bg: rgba(255, 255, 255, 0.05);
+    --nav-btn-bg: red;
+    --ctx-menu-bg: #19191C;
+    --ctx-menu-bg-hover: #262629;
+    --ctx-menu-shadow: 0 0 0 1px #242427, 0 3px 5px 0 black;
+    --bookmarks-node-bg-hover: #fcfcfd16;
+    --bookmarks-node-bg-active: #fcfcfd16;
+  }
+}
+/* For light theme. */
+@media (prefers-color-scheme: light) {
+  #root[data-style=auto],
+  #root[data-style=light] {
+    --bg: #fcfcfd;
+    --ctx-menu-bg-hover: #ededee;
+  }
+}
+.PinnedDock,
+.HiddenPanelsBar,
+.TabsPanel .container,
+.Bookmarks .bookmarks-wrapper {
+  box-shadow: none !important;
+}
+
+.Sidebar #nav_bar {
+  display: none;
+}
+.Sidebar .panel-btn {
+  /* ??? Really nice naming standard. */
+}
+.Sidebar .panel-btn .panel-btn {
+  background-color: #100f18;
+}
+.Sidebar .panel-btn .len {
+  top: -1px;
+  padding: 0;
+  background: none;
+  font-weight: bolder;
+}
+.Sidebar .panel-btn[data-active] {
+  box-shadow: none;
+  background: rgba(225, 255, 255, 0.3);
+}
+.Sidebar .panel-btn[data-active] .len {
+  color: white;
+}
+
+.NavigationBar .panel-btn:hover {
+  background-color: transparent;
+}
+
+.CtxMenu .inline-group:not(:last-of-type) {
+  box-shadow: none;
+}
+.CtxMenu .opt[data-separator]:before {
+  background-color: transparent;
+}
+
+.Folder .children:hover:before {
+  opacity: 0.7;
+}
+
+#root[data-pinned-tabs-position=panel][data-pinned-tabs-list] .PinnedDock {
+  padding: 0 0 1px;
+}
+.PinnedDock::after {
+  left: 8px;
+  width: calc(100% - 16px);
+  height: 1px;
+  background-color: rgba(136, 136, 136, 0.3333333333);
+  box-shadow: none;
+}
+
+.ScrollBox > .top-shadow {
+  box-shadow: 0 1px 12px 0 var(--bg);
+}
+.ScrollBox > .bottom-shadow {
+  box-shadow: 0 -1px 12px 0 var(--bg);
+}
+
+.Separator .body::after {
+  background-color: rgba(136, 136, 136, 0.2);
+  box-shadow: none;
+  top: auto;
+}
+
+.Tab::before, .Tab[data-active]::before, .Tab::after, .Tab[data-active]::after {
+  box-shadow: none !important;
+  border: none;
+  border: none !important;
+  outline: none !important;
+}
+.Tab::before {
+  background-color: transparent;
+  background-image: none;
+}
+.Tab::after {
+  display: none;
+}
+.Tab .title {
+  font-size: 13px;
+}
+.Tab .close > * {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  margin-top: -0.1rem;
+  margin-left: -0.2rem;
+}
+.Tab .close > * > * {
+  stroke: #FF6D75;
+  fill: #FF6D75;
+}
+.Tab .ctx {
+  top: 0;
+  width: 2px;
+  height: 100%;
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.Tab:hover[data-active]:not([data-selected]) .title,
+.PinnedTab:hover[data-active]:not([data-selected]) .title {
+  color: var(--tabs-activated-fg);
+}

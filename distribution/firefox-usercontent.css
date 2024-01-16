@@ -1,0 +1,22 @@
+@-moz-document url("about:newtab") {
+  body {
+    background-image: url(bg.jpg), url(bg.png);
+    background-size: cover;
+  }
+  .personalize-button {
+    display: none !important;
+  }
+}
+@-moz-document url("about:home") {
+  body {
+    background-image: url(bg.jpg), url(bg.png);
+    background-size: cover;
+  }
+  .personalize-button {
+    display: none !important;
+  }
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(128, 128, 128, 0.2196078431) transparent !important;
+}

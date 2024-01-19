@@ -9,14 +9,14 @@
 #
 # João Farias © 2023 BeyondMagic <beyondmagic@mail.ru>
 
-$env.folder = './distribution/'
-$env.name_group = 'sass-youtube'
+let $folder = './distribution/'
+let $name_group = 'sass-youtube'
 
 def compile [--watch (-w), input: any, outname: any] {
-	let output = ($outname | prepend ($env.folder) | str join)
+	let output = ($outname | prepend ($folder) | str join)
 	if $watch {
 		use task.nu
-		task spawn --group $env.name_group {
+		task spawn --group $name_group {
 			sass --watch --no-source-map ($input) ($output)
 		}
 	} else {
@@ -32,14 +32,14 @@ def main [--watch (-w), --clean (-c)] {
 
 	if $clean {
 		use task.nu
-		task kill --group $env.name_group
-		task clean --group $env.name_group
-		task group remove $env.name_group
+		task kill --group $name_group
+		task clean --group $name_group
+		task group remove $name_group
 	}
 
 	if $watch {
 		use task.nu
-		task group add $env.name_group
+		task group add $name_group
 	}
 
 	compile -w `Group Page.scss` `sidebery-group_page.css`

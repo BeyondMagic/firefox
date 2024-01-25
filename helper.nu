@@ -16,8 +16,8 @@ const firefox_chrome = 'firefox-userchrome.css'
 const sidebery_sidebar = 'sidebery-sidebar.css'
 const sidebery_group_page = 'sidebery-group_page.css'
 
-def compile [--watch (-w), input: any, outname: any] {
-	let output = ($outname | prepend ($folder) | str join)
+export def compile [--watch (-w), input: any, outname: any] {
+	let output = ($outname | prepend ($distribution) | str join)
 	if $watch {
 		use task.nu
 		task spawn --group $name_group {
@@ -28,7 +28,7 @@ def compile [--watch (-w), input: any, outname: any] {
 	}
 }
 
-def main [--watch (-w), --clean (-c)] {	
+export def main [--watch (-w), --clean (-c)] {	
 	if $clean and $watch {
 		echo "You can't use both flags (--watch/-w and --clean/-c) at the same time!"
 		exit 1

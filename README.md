@@ -10,4 +10,15 @@ The latest compiled files (CSS) can be get in [distribution folder](./distributi
 - For more themes, see [FirefoxCSS Store](https://firefoxcss-store.github.io/);
 - For more information about them and how to use *userchrome.css*, see [FirefoxCSS Store Repository](https://github.com/FirefoxCSS-Store/FirefoxCSS-Store.github.io).
 
+___
+
+**Roadmap:**
+1. Automatic deduction for the Firefox profile folder for the linking subcommand functionality for the following operating systems:
+    - [ ] Linux.
+    - [ ] FreeBSD.
+    - [ ] Windows.
+    - [ ] MacOS.
+
+___
+
 Credits: `João Farias © 2023 BeyondMagic <beyondmagic@mail.ru>`.

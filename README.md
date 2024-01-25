@@ -14,7 +14,7 @@ ___
 
 **Roadmap:**
 1. Automatic deduction for the Firefox profile folder for the linking subcommand functionality for the following operating systems:
-    - [ ] Linux.
+    - [x] Linux.
     - [ ] FreeBSD.
     - [ ] Windows.
     - [ ] MacOS.

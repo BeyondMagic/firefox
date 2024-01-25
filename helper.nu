@@ -7,7 +7,7 @@
 #	dart-sass
 #	optional for watching files: task.nu (refer to: https://www.nushell.sh/book/background_task.html)
 #
-# João Farias © 2023 BeyondMagic <beyondmagic@mail.ru>
+# João Farias © 2023-2024 BeyondMagic <beyondmagic@mail.ru>
 
 let $folder = './distribution/'
 let $name_group = 'sass-youtube'

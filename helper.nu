@@ -9,8 +9,12 @@
 #
 # João Farias © 2023-2024 BeyondMagic <beyondmagic@mail.ru>
 
-let $folder = './distribution/'
-let $name_group = 'sass-youtube'
+const distribution = './distribution/'
+const name_group = 'sass-youtube'
+const firefox_content = 'firefox-usercontent.css'
+const firefox_chrome = 'firefox-userchrome.css'
+const sidebery_sidebar = 'sidebery-sidebar.css'
+const sidebery_group_page = 'sidebery-group_page.css'
 
 def compile [--watch (-w), input: any, outname: any] {
 	let output = ($outname | prepend ($folder) | str join)
@@ -42,10 +46,10 @@ def main [--watch (-w), --clean (-c)] {
 		task group add $name_group
 	}
 
-	compile -w `Group Page.scss` `sidebery-group_page.css`
-	compile -w `Sidebar.scss` `sidebery-sidebar.css`
-	compile -w `userChrome.scss` `firefox-userchrome.css`
-	compile -w `userContent.scss` `firefox-usercontent.css`
+	compile -w `Group Page.scss` $sidebery_group_page
+	compile -w `Sidebar.scss` $sidebery_sidebar
+	compile -w `userChrome.scss` $firefox_chrome
+	compile -w `userContent.scss` $firefox_content
 
 	if $watch {
 		use task.nu

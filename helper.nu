@@ -3,9 +3,9 @@
 # Compiles bunch of SASS files into CSS files putting them into a folder.
 #
 # Dependencies:
-# - nushell
-# - dart-sass
-# - optional for watching files: task.nu (refer to: https://www.nushell.sh/book/background_task.html)
+#	nushell
+#	dart-sass
+#	optional for watching files: task.nu (refer to: https://www.nushell.sh/book/background_task.html)
 #
 # João Farias © 2023 BeyondMagic <beyondmagic@mail.ru>
 

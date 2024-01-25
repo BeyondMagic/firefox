@@ -1,6 +1,7 @@
 This repository is a SASS theme for both [userchrome.css](https://www.userchrome.org/), a featured of Firefox that enables users to stylise their browsers interfaces and pages the way they want through CSS; and [Sidebery](https://github.com/mbnuqw/sidebery), a sidebar add-on for Firefox that lets users to organise their tabs in a vertical side-by-side way and style it through CSS.
 
-![Preview with latest version of Firefox Nightly](./.github/preview_1.png)
+![Preview of Nushell page with latest version of Firefox Nightly](./.github/preview_1.png)
+![Preview of Github page with latest version of Firefox Nightly](./.github/preview_2.png)
 
 It is supposed to be used with both *Sidebery* and *userchrome.css* as both CSS files are interoperable.
 

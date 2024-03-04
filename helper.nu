@@ -52,44 +52,17 @@ export def link [
 	(ls $chrome)
 }
 
-export def compile [--watch (-w), input: any, outname: any] {
-	let output = ($outname | prepend ($distribution) | str join)
-	if $watch {
-		use task.nu
-		task spawn --group $name_group {
-			sass --watch --no-source-map ($input) ($output)
-		}
-	} else {
-		sass --no-source-map ($input) ($output)
-	}
+export def compile [
+	input: string
+	outname: string
+]: nothing -> nothing {
+	let output = $distribution + $outname
+	^sass --no-source-map $input $output
 }
 
-export def main [--watch (-w), --clean (-c)] {	
-	if $clean and $watch {
-		echo "You can't use both flags (--watch/-w and --clean/-c) at the same time!"
-		exit 1
-	}
-
-	if $clean {
-		use task.nu
-		task kill --group $name_group
-		task clean --group $name_group
-		task group remove $name_group
-	}
-
-	if $watch {
-		use task.nu
-		task group add $name_group
-	}
-
-	compile -w `Group Page.scss` $sidebery_group_page
-	compile -w `Sidebar.scss` $sidebery_sidebar
-	compile -w `userChrome.scss` $firefox_chrome
-	compile -w `userContent.scss` $firefox_content
-
-	if $watch {
-		use task.nu
-		echo (task status)
-		echo "Use `./helper.nu --clean` to remove the new processes created!"
-	}
+export def main [] {
+	compile `Group Page.scss` $sidebery_group_page
+	compile `Sidebar.scss` $sidebery_sidebar
+	compile `userChrome.scss` $firefox_chrome
+	compile `userContent.scss` $firefox_content
 }

@@ -362,13 +362,6 @@ panel, menupopup {
   color: #eee !important;
 }
 
-* {
-  --in-content-page-background: #17171A!important;
-} /* Disable when using light theme. Can't isolate */
-#window-modal-dialog {
-  --chrome-offset: 20px !important;
-}
-
 [lwtheme-mozlightdark] tooltip {
   -moz-appearance: none !important;
   background-color: var(--background) !important;
@@ -382,7 +375,7 @@ tooltip {
   color: #ededed;
 }
 
-@-moz-document url("moz-extension://e9ba0e38-018d-48cf-a761-d7b7937b6bcf/settings/settings.html") {
+@document url("moz-extension://e9ba0e38-018d-48cf-a761-d7b7937b6bcf/settings/settings.html") {
   #root[data-style=auto] {
     --bg: #030303;
   }

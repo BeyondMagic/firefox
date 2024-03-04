@@ -1,4 +1,4 @@
-@-moz-document url("about:newtab") {
+@document url("about:newtab") {
   body {
     background-image: url(bg.jpg), url(bg.png);
     background-size: cover;
@@ -7,7 +7,7 @@
     display: none !important;
   }
 }
-@-moz-document url("about:home") {
+@document url("about:home") {
   body {
     background-image: url(bg.jpg), url(bg.png);
     background-size: cover;

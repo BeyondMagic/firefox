@@ -22,18 +22,19 @@ use std assert
 # Link files a mozilla profile.
 export def link [
 	--profile : string, # Profile, by default the latest (last modified) firefox profile.
-] -> int {
+]: nothing -> any {
 	mut folder = ''
 	if ($profile | is-empty) {
 
 		# Roadmap 1.: automatic deduction of the Firefox profile folder.
-		let host = (sys | get host | get long_os_version | str downcase)
+		let host = (sys host | get long_os_version | str downcase)
 		assert ($host | str contains 'linux')
 
-		const mozilla_folder = '~/.mozilla/firefox/'
+		let mozilla_folder = glob '~/.mozilla/firefox/' | first
 
 		# Exit if fails to find one mozilla .default folder.
-		if not ($mozilla_folder | path exists) or (ls $mozilla_folder | find '.default' | is-empty) {
+
+		if not ($mozilla_folder | path exists) or (ls $mozilla_folder | where name =~ '.default' | is-empty) {
 			log critical $'Found no firefox folders at "($mozilla_folder | path expand)". You should specify one instead.'
 			return 1
 		}
